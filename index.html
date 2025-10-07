@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nusantara Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            background-color: black;
+        }
+
+        /* Styling untuk Video Latar Belakang */
+        video {
+            position: fixed;
+            /* Menetapkan posisi tetap */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Memastikan video menutupi seluruh area tanpa distorsi */
+            z-index: -1;
+            /* Menempatkan video di belakang konten lain */
+        }
+
+        /* Styling untuk Konten Utama */
+        .content {
+            position: relative;
+            color: white;
+            text-align: bottom;
+            margin-top: 20%;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .content h1 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 3em;
+            margin-bottom: 20px;
+            position: relative;
+            bottom: 250px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1rem;
+            line-height: 1.5;
+            width: 60%;
+            margin: 0 auto;
+            position: relative;
+            top: 150px;
+            text-align: center;
+            font-family: 'Chewy', cursive;
+        }
+
+        .btn-go {
+            position: relative;
+            text-align: center;
+            margin-top: 30px;
+            top: 78px;
+            z-index: 1;
+            right: 555px;
+        }
+        .btn-go button {
+            background: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn-go button:hover {
+            background: rgba(236, 78, 11, 0.557);
+        }
+
+
+        /* Styling untuk Kontrol */
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        .controls button {
+            background: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <video id="bgVideo" loop playsinline>
+        <source src="asset/video/backgroundweb.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video tag.
+    </video>
+
+    <div class="content" id="content" style="display:none;">
+        <h1>Selamat Datang Di Nusantara Travel!</h1>
+        <p>Anda bisa menjelajahi berbagai destinasi menarik di Indonesia menggunakan platform ini. <br>
+            Anda juga bisa memesan tiket pesawat, hotel, dan paket wisata dengan mudah dan cepat. <br>
+            Nikmati pengalaman liburan yang menyenangkan dan tak terlupakan bersama Nusantara Travel!
+        </p>
+    </div>
+
+    <div class="btn-go">
+        <a href="lap.html"><button>Get Started</button></a>
+    </div>
+
+    <div class="controls" id="controls" style="display:none;">
+        <button id="muteBtn">🔊 Unmute</button>
+    </div>
+
+    <script>
+        window.onload = function () {
+            let video = document.getElementById("bgVideo");
+            let muteBtn = document.getElementById("muteBtn");
+
+            // 1. Matikan suara secara default untuk memastikan Autoplay berhasil
+            video.muted = true;
+
+            // 2. Coba putar video
+            let playPromise = video.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Video berhasil diputar
+                    document.getElementById("content").style.display = "block";
+                    document.getElementById("controls").style.display = "block";
+                    muteBtn.textContent = "🔊 Unmute"; // Tetapkan teks awal sebagai Unmute
+                }).catch(error => {
+                    // Pemutaran gagal (jarang terjadi jika sudah dimatikan/muted)
+                    console.log("Video playback failed:", error);
+                });
+            }
+
+            // Event untuk tombol mute/unmute
+            muteBtn.onclick = function () {
+                if (video.muted) {
+                    video.muted = false;
+                    muteBtn.textContent = "🔇 Mute";
+                } else {
+                    video.muted = true;
+                    muteBtn.textContent = "🔊 Unmute";
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
