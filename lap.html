@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kaushan+Script&display=swap" rel="stylesheet">
     <style>
+        :root{
+            --nav-height: 76px;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -25,6 +28,8 @@
         body {
             margin: 0;
             background-color: rgba(0, 149, 255, 0.676);
+            /* no extra top padding — navbar will be in flow and stick to top */
+            padding-top: 0;
         }
 
         .cont-nav {
@@ -33,8 +38,12 @@
             align-items: center;
             padding: 10px 20px;
             background-color: rgb(255, 255, 255);
-            position: fixed;
+            /* use sticky so the nav sits in normal flow then sticks to top */
+            position: sticky;
+            top: 0;
             width: 100%;
+            height: var(--nav-height);
+            z-index: 99999; /* keep navbar on top */
         }
 
         .cont-nav.nav {
@@ -66,13 +75,15 @@
         }
 
         .setting {
-            position: fixed;
-            top: 15px;
+            /* position inside the nav so it stays aligned with it */
+            position: absolute;
             right: 20px;
+            height: var(--nav-height);
             display: flex;
-            align-items: center;
+            align-items: center; /* vertically center inside nav */
             gap: 10px;
-            z-index: 1000;
+            z-index: 100000; /* ensure setting controls appear above other content */
+            pointer-events: auto;
         }
 
         /* dropdown styles */
@@ -135,10 +146,16 @@
         .banner img {
             width: 98%;
             margin-left: 13.5px;
-            height: 100vh;
+            height: 520px;
             object-fit: fill;
             border-radius: 20px;
-            margin-top: 100px;
+            margin-top: 0; /* flush under navbar padding */
+            display: block;
+        }
+        /* keep banner and cards below the navbar in stacking order */
+        .banner, .photo-card, section.container, .populer-package {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -159,46 +176,47 @@
                 <a href="contact.html">Contact Us</a>
             </nav>
         </div>
-    </div>
-    <div class="setting">
-        <div class="nav-line">
-            <!-- three-vertical-dots dropdown for additional navigation -->
-            <div class="dropdown">
-                <button class="menu-button" aria-haspopup="true" aria-expanded="false" id="navDotsBtn" title="More">
-                    <!-- simple vertical dots using inline SVG -->
-                    <svg class="dots-vertical" viewBox="0 0 24 24" aria-hidden="true">
-                        <circle cx="12" cy="5" r="1.8" fill="black"></circle>
-                        <circle cx="12" cy="12" r="1.8" fill="black"></circle>
-                        <circle cx="12" cy="19" r="1.8" fill="black"></circle>
-                    </svg>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="navDotsBtn" id="navDotsMenu">
-                    <a href="package.html">Package</a>
-                    <a href="purchase.html">Purchase</a>
-                    <a href="voucher.html">Voucher</a>
+        <div class="setting">
+            <div class="nav-line">
+                <!-- three-vertical-dots dropdown for additional navigation -->
+                <div class="dropdown">
+                    <button class="menu-button" aria-haspopup="true" aria-expanded="false" id="navDotsBtn" title="More">
+                        <!-- simple vertical dots using inline SVG -->
+                        <svg class="dots-vertical" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="5" r="1.8" fill="black"></circle>
+                            <circle cx="12" cy="12" r="1.8" fill="black"></circle>
+                            <circle cx="12" cy="19" r="1.8" fill="black"></circle>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="navDotsBtn" id="navDotsMenu">
+                        <a href="package.html">Package</a>
+                        <a href="purchase.html">Purchase</a>
+                        <a href="voucher.html">Voucher</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="ntt-account">
-            <!-- settings gear with dropdown for account actions -->
-            <div class="dropdown">
-                <button class="menu-button" aria-haspopup="true" aria-expanded="false" id="settingsBtn"
-                    title="Settings">
-                    <svg class="gear" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="black"
-                            d="M19.14,12.94a7.14,7.14,0,0,0,0-1.88l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.6-.22l-2.49,1a7.28,7.28,0,0,0-1.6-.93L14.5,2.5a.5.5,0,0,0-.5-.5H10a.5.5,0,0,0-.5.5L9,4.37a7.28,7.28,0,0,0-1.6.93l-2.49-1a.5.5,0,0,0-.6.22l-2,3.46a.5.5,0,0,0,.12.64L4.86,11a7.14,7.14,0,0,0,0,1.88L2.75,14.53a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.6.22l2.49-1a7.28,7.28,0,0,0,1.6.93L9.5,21.5a.5.5,0,0,0,.5.5h4a.5.5,0,0,0,.5-.5l.5-2.37a7.28,7.28,0,0,0,1.6-.93l2.49,1a.5.5,0,0,0,.6-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z">
-                        </path>
-                    </svg>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="settingsBtn" id="settingsMenu">
-                    <a href="sign-in.html">Sign In</a>
-                    <a href="log-in.html">Log In</a>
-                    <a href="contact.html">Profile</a>
+            <div class="ntt-account">
+                <!-- settings gear with dropdown for account actions -->
+                <div class="dropdown">
+                    <button class="menu-button" aria-haspopup="true" aria-expanded="false" id="settingsBtn"
+                        title="Settings">
+                        <svg class="gear" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="black"
+                                d="M19.14,12.94a7.14,7.14,0,0,0,0-1.88l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.6-.22l-2.49,1a7.28,7.28,0,0,0-1.6-.93L14.5,2.5a.5.5,0,0,0-.5-.5H10a.5.5,0,0,0-.5.5L9,4.37a7.28,7.28,0,0,0-1.6.93l-2.49-1a.5.5,0,0,0-.6.22l-2,3.46a.5.5,0,0,0,.12.64L4.86,11a7.14,7.14,0,0,0,0,1.88L2.75,14.53a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.6.22l2.49-1a7.28,7.28,0,0,0,1.6.93L9.5,21.5a.5.5,0,0,0,.5.5h4a.5.5,0,0,0,.5-.5l.5-2.37a7.28,7.28,0,0,0,1.6-.93l2.49,1a.5.5,0,0,0,.6-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="settingsBtn" id="settingsMenu">
+                        <a href="sign-in.html">Sign In</a>
+                        <a href="log-in.html">Log In</a>
+                        <a href="contact.html">Profile</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="banner">
         <img src="asset/img/Nusantara Travel.jpg" alt="NTT banner">
     </div>
@@ -309,8 +327,14 @@
     }
 
     /* overlap the banner slightly */
+    /* make the overlap modest so cards don't go under the navbar */
     #card-c {
-        margin-top: -80px;
+        margin-top: -36px;
+    }
+
+    /* ensure when scrolling or linking the category section it appears below the fixed navbar */
+    section.container {
+        scroll-margin-top: calc(var(--nav-height) + 12px);
     }
 
     @media (max-width: 767px) {
