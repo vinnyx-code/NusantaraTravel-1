@@ -32,7 +32,7 @@
 .caption{
     position: static;
     padding: 14px 16px;
-    color: #222;
+    color: #0000009e;
     background-color: #fff;
     text-align: left;
     text-shadow: none;
@@ -102,15 +102,15 @@ button:hover{
     z-index: 10;
 }
 .n:hover{
-    background-color: #575050;
+    background-color: #024e95;
 }
 .n.prev{
     left: 0px;
-    border-radius: 15px 0 0 15px;
+    border-radius: 25px 25px 25px 25px;
 }
 .n.next{
     right: 0px;
-    border-radius: 0 15px 15px 0;
+    border-radius: 25px 25px 25px 25px;
 }
 
 .dot-cont{
