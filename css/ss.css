@@ -159,3 +159,14 @@ button:hover{
     transform: scale(1.2);
 }
 
+.t.prev-testi{
+    border-radius: 60px 60px;
+}
+.t.next-testi{
+    border-radius: 60px 60px;
+}
+/* --- Hover --- */
+.t.prev-testi:hover,
+.t.next-testi:hover {
+    background-color: #004586;
+}
