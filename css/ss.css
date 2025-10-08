@@ -38,8 +38,8 @@
     text-shadow: none;
 }
 
-.caption h3{ margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color:#222 }
-.caption p{ margin: 0; font-size: .9rem; color:#666 }
+.caption h3{ margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color:#006eff }
+.caption p{ margin: 0; font-size: .9rem; color:#4a4747 }
 
 /* controls (prev/next) style tweaks to be round and vertically centered */
 .n{ width:44px; height:44px; border-radius:50%; font-size:1.6rem; }
