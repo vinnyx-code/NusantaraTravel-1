@@ -38,7 +38,7 @@
             gap: 100px;
             align-items: center;
             padding: 10px 20px;
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0.669);
             /* use sticky so the nav sits in normal flow then sticks to top */
             position: sticky;
             top: 0;
@@ -73,7 +73,7 @@
         }
 
         .nav a:hover {
-            color: #ff8400;
+            color: #0077ff;
         }
 
         .setting {
@@ -121,14 +121,14 @@
         .dropdown-menu a {
             display: block;
             padding: 10px 14px;
-            color: #fffcfc;
+            color: #ffffff;
             text-decoration: none;
             font-size: 0.95em;
         }
 
         .dropdown-menu a:hover {
             background: #ffffff;
-            color: rgb(0, 0, 0);
+            color: #000000;
         }
 
         /* three vertical dots icon styling */
@@ -145,6 +145,10 @@
             height: 25px;
             display: inline-block;
             vertical-align: middle;
+        }
+
+        .gear path:hover {
+            fill: rgb(2, 113, 249);
         }
 
         .banner img {
@@ -214,7 +218,7 @@
 <body>
     <div class="cont-nav">
         <div class="logo">
-            <img src="asset/img/Logo NTT.jpg" alt="Nusantara Travel Logo" width="150px" height="80px">
+            <img src="asset/img/Logo NTT.png" alt="Nusantara Travel Logo" width="150px" height="80px">
         </div>
         <div class="nama-web">
             <h2>Nusantara Travel</h2>
@@ -274,7 +278,7 @@
 
     <section class="container mt-5 pt-4">
         <h2 class="mb-4"
-            style="font-weight:750; padding: 50px; background:linear-gradient(#0d0c0c80,#f4762d); background-clip: text; color: transparent;">
+            style="font-weight:750; padding: 50px; background:linear-gradient(#010b43b5,#002afd); background-clip: text; color: transparent;">
             [ Kategori ]</h2>
         <div class="row gx-4 gy-4 align-items-stretch" id="card-c">
             <div class="col-12 col-md-6 col-lg-4">
@@ -282,8 +286,8 @@
                     <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-1.jpg');"></div>
                     <div class="card-body d-flex align-items-end p-0">
                         <div class="card-overlay p-3 w-100">
-                            <h5 class="card-title mb-1" style="color: rgb(255, 166, 0);">Sejarah dan Budaya</h5>
-                            <h5 class="card-title mb-1" style="color: black;">[History and Culture]</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Sejarah dan Budaya</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(255, 255, 255);">[History and Culture]</h5>
                             <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
                             </p>
                         </div>
@@ -296,8 +300,8 @@
                     <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-2.jpg');"></div>
                     <div class="card-body d-flex align-items-end p-0">
                         <div class="card-overlay p-3 w-100">
-                            <h5 class="card-title mb-1" style="color: rgb(255, 166, 0);">Alam</h5>
-                            <h5 class="card-title mb-1" style="color: black;">[Nature]</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Alam</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(255, 255, 255);">[Nature]</h5>
                             <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
                             </p>
                         </div>
@@ -310,8 +314,8 @@
                     <div class="card-img-top img-cover" style="background-image:url('asset/img/foto.jpg'); "></div>
                     <div class="card-body d-flex align-items-end p-0">
                         <div class="card-overlay p-3 w-100">
-                            <h5 class="card-title mb-1" style="color: rgb(255, 166, 0);">Khusus</h5>
-                            <h5 class="card-title mb-1" style="color: black;">[Special Interest]</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Khusus</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(255, 255, 255);">[Special Interest]</h5>
                             <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
                             </p>
                         </div>
@@ -320,11 +324,15 @@
             </div>
     </section>
 
+    <!-- Popular Package -->
+    <h2 class="title"
+        style="font-weight:750; padding: 50px; background:linear-gradient(#010b43b5,#002afd); background-clip: text; color: transparent;">
+        [ Populer ]</h2>
     <div class="populer-package">
         <div class="populer-c">
-                <div class="populer-slide">
-                    <img class="image" src="asset/img/foto.jpg" alt="#">
-                    <div class="caption">
+            <div class="populer-slide">
+                <img class="image" src="asset/img/foto.jpg" alt="#">
+                <div class="caption">
                     <h3>SELAMAT DATANG DI SLIDER</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
                         incidunt
