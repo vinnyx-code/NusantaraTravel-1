@@ -170,3 +170,64 @@ button:hover{
 .t.next-testi:hover {
     background-color: #004586;
 }
+
+.footer {
+      background-color: #ffffff60;
+      color: #000000;
+      padding: 40px 30px;
+      margin-top: 20%;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .cr {
+      position:absolute;
+      top:530%;
+      padding: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .footer-col {
+      flex: 55px;
+      margin: 25px;
+    }
+
+    .footer-col h3 {
+      color: #000000;
+      margin-bottom: 15px;
+    }
+
+    .footer-col p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #000000;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .lang-btn {
+      margin-top: 10px;
+      padding: 10px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 4px;
+    }

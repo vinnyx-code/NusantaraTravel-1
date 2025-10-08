@@ -1,0 +1,199 @@
+:root {
+            --nav-height: 76px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-decoration: none;
+        }
+
+        body {
+            /* no extra top padding — navbar will be in flow and stick to top */
+            padding-top: 0;
+        }
+
+        .cont-nav {
+            display: flex;
+            gap: 100px;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.539);
+            /* use sticky so the nav sits in normal flow then sticks to top */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 99999;
+            /* keep navbar on top */
+        }
+
+        .cont-nav.nav {
+            margin-right: 200px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .nama-web {
+            font-family: 'Chewy', cursive;
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            text-decoration: none;
+            right: 35px;
+            color: rgb(0, 0, 0);
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #0077ff;
+        }
+
+        .setting {
+            /* position inside the nav so it stays aligned with it */
+            position: absolute;
+            right: 20px;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            /* vertically center inside nav */
+            gap: 10px;
+            z-index: 100000;
+            /* ensure setting controls appear above other content */
+            pointer-events: auto;
+        }
+
+        /* dropdown styles */
+        .menu-button {
+            background: transparent;
+            border: none;
+            color: rgb(0, 0, 0);
+            font-size: 1.4em;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 110%;
+            background: rgb(0, 0, 0);
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .dropdown-menu a:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* three vertical dots icon styling */
+        .dots-vertical {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* small gear icon */
+        .gear {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .gear path:hover {
+            fill: rgb(2, 113, 249);
+        }
+/* Card untuk icon */
+        .card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            width: fit-content;
+            margin: 20px auto;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Icon Size */
+        .card svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Facebook color */
+        .icon-2 svg {
+            fill: #1877F2;
+        }
+
+        /* Instagram pakai gradient */
+        .icon-1 svg {
+            fill: url(#instaGradient);
+        }
+
+        /* CSS untuk memastikan ikon tampil dengan benar */
+.icon-4 svg {
+    /* Atur ukuran ikon sesuai kebutuhan */
+    width: 30px; 
+    height: 30px; 
+    
+    /* Gunakan warna hijau resmi WhatsApp */
+    fill: #25D366; 
+}
+
+/* Jika Anda ingin warna latar belakang saat dihover */
+.icon-4 a:hover svg {
+    /* Misalnya, sedikit lebih gelap saat di-hover */
+    fill: #1DA851; 
+}
+
+/* Jika Anda ingin efek kotak seperti Instagram, tambahkan di sini */
+.icon-4 {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 20%; /* Sedikit membulat */
+}
