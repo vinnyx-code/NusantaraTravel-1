@@ -15,9 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kaushan+Script&display=swap" rel="stylesheet">
     <style>
-        :root{
+        :root {
             --nav-height: 76px;
         }
+
         * {
             margin: 0;
             padding: 0;
@@ -43,7 +44,8 @@
             top: 0;
             width: 100%;
             height: var(--nav-height);
-            z-index: 99999; /* keep navbar on top */
+            z-index: 99999;
+            /* keep navbar on top */
         }
 
         .cont-nav.nav {
@@ -80,9 +82,11 @@
             right: 20px;
             height: var(--nav-height);
             display: flex;
-            align-items: center; /* vertically center inside nav */
+            align-items: center;
+            /* vertically center inside nav */
             gap: 10px;
-            z-index: 100000; /* ensure setting controls appear above other content */
+            z-index: 100000;
+            /* ensure setting controls appear above other content */
             pointer-events: auto;
         }
 
@@ -149,13 +153,60 @@
             height: 520px;
             object-fit: fill;
             border-radius: 20px;
-            margin-top: 0; /* flush under navbar padding */
+            margin-top: 0;
+            /* flush under navbar padding */
             display: block;
         }
+
         /* keep banner and cards below the navbar in stacking order */
-        .banner, .photo-card, section.container, .populer-package {
+        .banner,
+        .photo-card,
+        section.container,
+        .populer-package {
             position: relative;
             z-index: 1;
+        }
+
+        /* Photo card styles */
+        .photo-card {
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .photo-card .img-cover {
+            height: 260px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.128) 0%, rgba(0, 0, 0, 0.397) 50%, rgba(0, 0, 0, 0.516) 100%);
+            color: rgba(255, 255, 255, 0.868);
+        }
+
+        .card-title {
+            font-weight: 700;
+        }
+
+        /* overlap the banner slightly */
+        /* make the overlap modest so cards don't go under the navbar */
+        #card-c {
+            margin-top: -36px;
+        }
+
+        /* ensure when scrolling or linking the category section it appears below the fixed navbar */
+        section.container {
+            scroll-margin-top: calc(var(--nav-height) + 12px);
+        }
+
+        @media (max-width: 767px) {
+            .photo-card .img-cover {
+                height: 200px;
+            }
+
+            #card-c {
+                margin-top: -30px;
+            }
         }
     </style>
 </head>
@@ -216,7 +267,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="banner">
         <img src="asset/img/Nusantara Travel.jpg" alt="NTT banner">
     </div>
@@ -270,84 +321,115 @@
     </section>
 
     <div class="populer-package">
-        <h2 class="mb-4"
-            style="font-weight:750; padding: 50px; background:linear-gradient(#1412127c,#f4762d); background-clip: text; color: transparent;">
-            [ Populer Package ]</h2>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card photo-card h-100 shadow-sm">
-                <div class="card-img-top img-cover" style="background-image:url('asset/img/foto.jpg'); "></div>
-                <div class="card-body d-flex align-items-end p-0">
-                    <div class="card-overlay p-3 w-100">
-                        <h5 class="card-title mb-1" style="color: rgb(255, 166, 0);">Khusus</h5>
-                        <h5 class="card-title mb-1" style="color: black;">[Special Interest]</h5>
-                        <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
-                        </p>
-                    </div>
+        <div class="populer-c">
+            <div class="populer-slider">
+                <img class="image" src="" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt="">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
                 </div>
             </div>
         </div>
-        
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card photo-card h-100 shadow-sm">
-                <div class="card-img-top img-cover" style="background-image:url('asset/img/foto.jpg'); object-fit: fill; position: fixed; "></div>
-                <div class="card-body d-flex align-items-end p-0">
-                    <div class="card-overlay p-3 w-100">
-                        <h5 class="card-title mb-1" style="color: rgb(255, 166, 0);">Khusus</h5>
-                        <h5 class="card-title mb-1" style="color: black;">[Special Interest]</h5>
-                        <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <button class="nav prev">&#10094;</button>
+        <button class="nav next">&#10095;</button>
+
+        <div class="dot-cont"></div>
     </div>
 
 </body>
-
-<style>
-    /* Photo card styles */
-    .photo-card {
-        border-radius: 14px;
-        overflow: hidden;
-    }
-
-    .photo-card .img-cover {
-        height: 260px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .card-overlay {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.128) 0%, rgba(0, 0, 0, 0.397) 50%, rgba(0, 0, 0, 0.516) 100%);
-        color: rgba(255, 255, 255, 0.868);
-    }
-
-    .card-title {
-        font-weight: 700;
-    }
-
-    /* overlap the banner slightly */
-    /* make the overlap modest so cards don't go under the navbar */
-    #card-c {
-        margin-top: -36px;
-    }
-
-    /* ensure when scrolling or linking the category section it appears below the fixed navbar */
-    section.container {
-        scroll-margin-top: calc(var(--nav-height) + 12px);
-    }
-
-    @media (max-width: 767px) {
-        .photo-card .img-cover {
-            height: 200px;
-        }
-
-        #card-c {
-            margin-top: -30px;
-        }
-    }
-</style>
-
 
 <script>
     // Simple dropdown toggles with accessible behavior
