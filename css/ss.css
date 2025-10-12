@@ -234,3 +234,90 @@ button:hover{
       border-radius: 4px;
     }
 
+    /* Banner / Hero slider */
+    .cont-slide{
+        width: calc(100% - 120px);
+        max-width: 1400px;
+        height: 520px;
+        margin: 80px auto 40px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        position: relative;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .slider.on{ opacity: 1; }
+
+    .slide-on{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 700ms ease-in-out, transform 700ms ease-in-out;
+        transform: scale(1.02);
+    }
+
+    .slide-on.active{
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+    }
+
+    .slide-on img{ width: 100%; height: 100%; display: block; object-fit: cover; }
+
+    .content{
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        padding: 22px 26px;
+        color: #fff;
+        background: linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.6));
+        border-radius: 12px;
+        backdrop-filter: blur(3px);
+        text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .content h3{ margin: 0 0 6px 0; font-size: 1.6rem; letter-spacing: 0.6px; }
+    .content p{ margin: 0; font-size: 1rem; opacity: 0.95; }
+
+    /* Arrow buttons */
+    .turn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: #000;
+        border: none;
+        cursor: pointer;
+        font-size: 1.8rem;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        z-index: 5;
+    }
+    .turn:hover{ background: #024e95; color: #fff; }
+    .turn.n{ left: 18px; }
+    .turn.p{ right: 18px; }
+
+    /* Dots */
+    .cont-d{ position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 6; }
+    .cont-d .dot{ width: 12px; height: 12px; background: rgba(255,255,255,0.8); border-radius: 50%; cursor: pointer; transition: transform .18s ease, background .18s ease; }
+    .cont-d .dot.active{ background: #fff; transform: scale(1.25); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+    @media (max-width: 992px){
+        .cont-slide{ height: 420px; width: calc(100% - 40px); }
+        .turn{ width: 48px; height: 48px; }
+    }
+    @media (max-width: 576px){
+        .cont-slide{ height: 320px; }
+        .content h3{ font-size: 1.1rem; }
+    }
+
