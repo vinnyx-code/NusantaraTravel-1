@@ -1,11 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nusantara Travel</title>
+    <link rel="stylesheet" href="css/ss.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nav-height: 76px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgba(0, 149, 255, 0.594);
+            /* no extra top padding — navbar will be in flow and stick to top */
+            padding-top: 0;
+        }
+
+        .cont-nav {
+            display: flex;
+            gap: 100px;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.669);
+            /* use sticky so the nav sits in normal flow then sticks to top */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 99999;
+            /* keep navbar on top */
+        }
+
+        .cont-nav.nav {
+            margin-right: 200px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .nama-web {
+            font-family: 'Chewy', cursive;
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+        }
+
+        .nav a {
+            text-decoration: none;
+            right: 35px;
+            color: rgb(0, 0, 0);
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #0077ff;
+        }
+
+        .setting {
+            /* position inside the nav so it stays aligned with it */
+            position: absolute;
+            right: 20px;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            /* vertically center inside nav */
+            gap: 10px;
+            z-index: 100000;
+            /* ensure setting controls appear above other content */
+            pointer-events: auto;
+        }
+
+        /* dropdown styles */
+        .menu-button {
+            background: transparent;
+            border: none;
+            color: rgb(0, 0, 0);
+            font-size: 1.4em;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 110%;
+            background: rgb(0, 0, 0);
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .dropdown-menu a:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* three vertical dots icon styling */
+        .dots-vertical {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* small gear icon */
+        .gear {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .gear path:hover {
+            fill: rgb(2, 113, 249);
+        }
+
+        /* keep banner and cards below the navbar in stacking order */
+        .photo-card,
+        section.container,
+        .populer-package {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Photo card styles */
+        .photo-card {
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .photo-card .img-cover {
+            height: 260px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-overlay {
+            background-color: white;
+            color: black;
+        }
+
+        .card-title {
+            font-weight: 700;
+        }
+
+        /* make the overlap modest so cards don't go under the navbar */
+        #card-c {
+            margin-top: -36px;
+        }
+
+        /* ensure when scrolling or linking the category section it appears below the fixed navbar */
+        section.container {
+            scroll-margin-top: calc(var(--nav-height) + 12px);
+        }
+
+        @media (max-width: 767px) {
+            .photo-card .img-cover {
+                height: 200px;
+            }
+
+            #card-c {
+                margin-top: -30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div class="cont-nav">
+        <div class="logo">
+            <img src="asset/img/Logo NTT.png" alt="Nusantara Travel Logo" width="150px" height="80px">
+        </div>
+        <div class="nama-web">
+            <h2>Nusantara Travel</h2>
+        </div>
+        <div class="nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="destination.html">Destination</a>
+                <a href="#">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+        <div class="setting">
+            <div class="nav-line">
+                <!-- three-vertical-dots dropdown for additional navigation -->
+                <div class="dropdown">
+                    <button class="menu-button" aria-haspopup="true" aria-expanded="false" id="navDotsBtn" title="More">
+                        <!-- simple vertical dots using inline SVG -->
+                        <svg class="dots-vertical" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="5" r="1.8" fill="black"></circle>
+                            <circle cx="12" cy="12" r="1.8" fill="black"></circle>
+                            <circle cx="12" cy="19" r="1.8" fill="black"></circle>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="navDotsBtn" id="navDotsMenu">
+                        <a href="package.html">Package</a>
+                        <a href="purchase.html">Purchase</a>
+                        <a href="voucher.html">Voucher</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ntt-account">
+                <!-- settings gear with dropdown for account actions -->
+                <div class="dropdown">
+                    <button class="menu-button" aria-haspopup="true" aria-expanded="false" id="settingsBtn"
+                        title="Settings">
+                        <svg class="gear" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="black"
+                                d="M19.14,12.94a7.14,7.14,0,0,0,0-1.88l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.6-.22l-2.49,1a7.28,7.28,0,0,0-1.6-.93L14.5,2.5a.5.5,0,0,0-.5-.5H10a.5.5,0,0,0-.5.5L9,4.37a7.28,7.28,0,0,0-1.6.93l-2.49-1a.5.5,0,0,0-.6.22l-2,3.46a.5.5,0,0,0,.12.64L4.86,11a7.14,7.14,0,0,0,0,1.88L2.75,14.53a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.6.22l2.49-1a7.28,7.28,0,0,0,1.6.93L9.5,21.5a.5.5,0,0,0,.5.5h4a.5.5,0,0,0,.5-.5l.5-2.37a7.28,7.28,0,0,0,1.6-.93l2.49,1a.5.5,0,0,0,.6-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="settingsBtn" id="settingsMenu">
+                        <a href="sign-in.html">Sign In</a>
+                        <a href="log-in.html">Log In</a>
+                        <a href="contact.html">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-cont">
+        <div class="slider active">
+            <img src="asset/img/Nusantara Travel.jpg" alt="Banner">
+            <div class="content">
+                <h3>SELAMAT DATANG DI SLIDER</h3>
+                <p>Ini adalah slider sederhana menggunakan HTML, CSS, dan JavaScript.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="" alt="banner 2">
+            <div class="content">
+                <h3>SELAMAT DATANG DI SLIDER</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo incidunt
+                    rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                    voluptate ullam?</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="" alt="banner 3">
+            <div class="content">
+                <h3>SELAMAT DATANG DI SLIDER</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo incidunt
+                    rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                    voluptate ullam?</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="" alt="banner 4">
+            <div class="content">
+                <h3>SELAMAT DATANG DI SLIDER</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo incidunt
+                    rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                    voluptate ullam?</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="" alt="banner 5">
+            <div class="content">
+                <h3>SELAMAT DATANG DI SLIDER</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor odit ratione minima voluptates sit eum
+                    nostrum atque ipsum excepturi. Totam officia dignissimos, ullam qui in veniam hic eum dolores
+                    perspiciatis.</p>
+            </div>
+        </div>
+    </div>
     
+    <!-- Category -->
+    <section class="container mt-5 pt-4">
+        <h2 class="mb-4"
+            style="font-weight:750; padding: 50px; background:linear-gradient(#010b43b5,#002afd); background-clip: text; color: transparent;">
+            [ Kategori ]</h2>
+        <div class="row gx-4 gy-4 align-items-stretch" id="card-c">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card photo-card h-100 shadow-sm">
+                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-1.jpg');"></div>
+                    <div class="card-body d-flex align-items-end p-0">
+                        <div class="card-overlay p-3 w-100">
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Sejarah dan Budaya</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[History and Culture]</h5>
+                            <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card photo-card h-100 shadow-sm">
+                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-2.jpg');"></div>
+                    <div class="card-body d-flex align-items-end p-0">
+                        <div class="card-overlay p-3 w-100">
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Alam</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[Nature]</h5>
+                            <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card photo-card h-100 shadow-sm">
+                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto.jpg'); "></div>
+                    <div class="card-body d-flex align-items-end p-0">
+                        <div class="card-overlay p-3 w-100">
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Khusus</h5>
+                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[Special Interest]</h5>
+                            <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Popular Package -->
+    <h2 class="title"
+        style="font-weight:750; margin: 10px 0; padding: 45px ; background:linear-gradient(#010b43b5,#002afd); background-clip: text; color: transparent; margin-left: 75px;">
+        [ Populer ]</h2>
+    <div class="populer-package">
+        <div class="populer-c">
+            <div class="populer-slide">
+                <img class="image" src="asset/img/foto.jpg" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/sejarah dan budaya/papua.jpg" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/kota/palembangg.jpg" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/alam/bali.jpg" alt="#">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/kota/tugu yogya.jpg" alt="">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/kota/bandung.jpg" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/alam/raja ampat.jpg" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/alam/kawah ijen.jpg" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/alam/danau toba.jpg" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+            <div class="populer-slide">
+                <img class="image" src="asset/img/alam/bromo .jpg" alt=" #">
+                <div class="caption">
+                    <h3>SELAMAT DATANG DI SLIDER</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illum reiciendis labore illo
+                        incidunt
+                        rem suscipit maxime? Explicabo illo accusamus totam iure hic in. Dolor assumenda est quaerat
+                        voluptate ullam?</p>
+                </div>
+            </div>
+        </div>
+        <button class="n prev">&#8617;</button>
+        <button class="n next">&#8618;</button>
+
+        <div class="dot-cont"></div>
+    </div>
+
+    <div class="testimonials">
+        <div class="buble-respon">
+            <h2
+                style="font-weight:750; padding: 40px; background:linear-gradient(#001eff,#ffffff); background-clip: text; color: transparent; text-align: center; margin-top: 50px;">
+                [ Testimoni ]</h2>
+            <div class="testi-c">
+                <div class="testi-slide">
+                    <p>"Nusantara Travel membuat perjalanan saya ke Bali menjadi sangat mudah dan menyenangkan! Paket
+                        wisata yang mereka tawarkan sangat lengkap dan terjangkau. Saya sangat merekomendasikan layanan
+                        mereka kepada siapa saja yang ingin menjelajahi keindahan Indonesia."</p>
+                    <h3>- Andi, Jakarta</h3>
+                </div>
+                <div class="testi-slide">
+                    <p>"Saya sangat puas dengan layanan Nusantara Travel. Mereka membantu saya merencanakan liburan
+                        keluarga ke Yogyakarta dengan sangat baik. Semua akomodasi dan transportasi diatur dengan rapi,
+                        sehingga kami bisa fokus menikmati waktu bersama."</p>
+                    <h3>- Siti, Surabaya</h3>
+                </div>
+                <div class="testi-slide">
+                    <p>"Nusantara Travel benar-benar memahami kebutuhan pelancong. Saya memesan paket wisata ke Lombok
+                        melalui mereka, dan semuanya berjalan lancar. Panduan wisata mereka sangat berpengetahuan dan
+                        ramah. Saya pasti akan menggunakan jasa mereka lagi di masa depan!"</p>
+                    <h3>- Budi, Bandung</h3>
+                </div>
+            </div>
+            <button class="t prev-testi">&#8617;</button>
+            <button class="t next-testi">&#8618;</button>
+
+            <div class="dot-cont-testi"> </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About -->
+            <div class="footer-col">
+                <h3>About</h3>
+                <p>
+                    Selamat datang di website kami.
+                    <br />
+                    Apabila website ini mengalami bug atau kesalahan mohon dimaklumi,
+                    dan jika anda memiliki saran atau kritik untuk website ini silahkan
+                    hubungi contact di halaman selanjutnya yang sudah tersedia.
+                </p>
+                <button class="lang-btn">🌐 English</button>
+            </div>
+
+            <!-- Community -->
+            <div class="footer-col">
+                <h3>Community</h3>
+                <a href="#">SahabatAlam</a>
+                <a href="#">NusantaraIT</a>
+                <a href="#">NusantaraTravel</a>
+                <a href="#">Travelingkuy</a>
+                <a href="#">DIGITalks</a>
+                <a href="#">ITguy</a>
+            </div>
+
+            <!-- Our Sites -->
+            <div class="footer-col">
+                <h3>Our Sites</h3>
+                <a href="#">ITalks</a>
+                <a href="#">DIGIForm</a>
+                <a href="index.html">NusantaraTravel</a>
+            </div>
+            <!-- copyright -->
+            <div class="cr">
+                <p>
+                    &copy; 2025 V1procode-Web. Hak cipta dilindungi. Konten di situs ini
+                    tidak boleh disalin tanpa izin tertulis.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
+
+<script>
+    // Simple dropdown toggles with accessible behavior
+    (function () {
+        function toggleMenu(btn, menu) {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            menu.style.display = expanded ? 'none' : 'block';
+        }
+
+        function closeMenu(btn, menu) {
+            btn.setAttribute('aria-expanded', 'false');
+            menu.style.display = 'none';
+        }
+
+        const navBtn = document.getElementById('navDotsBtn');
+        const navMenu = document.getElementById('navDotsMenu');
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsMenu = document.getElementById('settingsMenu');
+
+        navBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleMenu(navBtn, navMenu);
+            // ensure settings closes
+            closeMenu(settingsBtn, settingsMenu);
+        });
+
+        settingsBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleMenu(settingsBtn, settingsMenu);
+            closeMenu(navBtn, navMenu);
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function () {
+            closeMenu(navBtn, navMenu);
+            closeMenu(settingsBtn, settingsMenu);
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeMenu(navBtn, navMenu);
+                closeMenu(settingsBtn, settingsMenu);
+            }
+        });
+
+        // keyboard open with Enter/Space
+        [navBtn, settingsBtn].forEach(function (btn) {
+            btn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
+        });
+    })();
+</script>
+<script src="script.js"></script>
+
 </html>

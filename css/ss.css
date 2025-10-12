@@ -161,9 +161,11 @@ button:hover{
 
 .t.prev-testi{
     border-radius: 60px 60px;
+    margin: 10px;
 }
 .t.next-testi{
     border-radius: 60px 60px;
+    margin: 10px;
 }
 /* --- Hover --- */
 .t.prev-testi:hover,
@@ -231,3 +233,4 @@ button:hover{
       font-size: 14px;
       border-radius: 4px;
     }
+
