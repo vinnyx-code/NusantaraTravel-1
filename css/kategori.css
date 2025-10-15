@@ -1,17 +1,8 @@
-:root {
-            --nav-height: 76px;
-        }
-
         * {
             margin: 0;
             padding: 0;
-            font-family: Georgia, 'Times New Roman', Times, serif;
             text-decoration: none;
-        }
-
-        body {
-            /* no extra top padding — navbar will be in flow and stick to top */
-            padding-top: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
         .cont-nav {
@@ -19,7 +10,7 @@
             gap: 100px;
             align-items: center;
             padding: 10px 20px;
-            background-color: rgba(255, 255, 255, 0.539);
+            background-color: rgba(255, 255, 255, 0.621);
             /* use sticky so the nav sits in normal flow then sticks to top */
             position: sticky;
             top: 0;
@@ -131,91 +122,32 @@
         .gear path:hover {
             fill: rgb(2, 113, 249);
         }
-/* Card untuk icon */
-        .card {
+
+        .cont-ks{
+            margin: 10px;
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-            width: fit-content;
-            margin: 20px auto;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+        }
+        .c-1{
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .c-1 img{
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
         }
 
-        .card a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
+        .c-1:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-
-        .card a:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Icon Size */
-        .card svg {
-            width: 40px;
-            height: 40px;
-        }
-
-        /* Facebook color */
-        .icon-2 svg {
-            fill: #1877F2;
-        }
-
-        /* Instagram pakai gradient */
-        .icon-1 svg {
-            fill: url(#instaGradient);
-        }
-
-        /* CSS untuk memastikan ikon tampil dengan benar */
-.icon-4 svg {
-    /* Atur ukuran ikon sesuai kebutuhan */
-    width: 30px; 
-    height: 30px; 
-    
-    /* Gunakan warna hijau resmi WhatsApp */
-    fill: #25D366; 
-}
-
-/* Jika Anda ingin warna latar belakang saat dihover */
-.icon-4 a:hover svg {
-    /* Misalnya, sedikit lebih gelap saat di-hover */
-    fill: #1DA851; 
-}
-
-/* Jika Anda ingin efek kotak seperti Instagram, tambahkan di sini */
-.icon-4 {
-    display: inline-block;
-    padding: 5px;
-    border-radius: 20%; /* Sedikit membulat */
-}
-
-.about{
-    text-align: center;
-    margin: 55px;
-    font-size: 1.2em;
-    color: #000c8d;
-}
-
-.do img{
-    display: block;
-    width: 35%;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.do img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
 .about{
   padding: 40px;
@@ -224,20 +156,20 @@
   border-radius: 20px;
 }
 
-.profile-card {
+.populer-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
 }
 
-.profile-card img {
+.populer-card img {
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 10px;
 }
-.profile-card img:hover {
+.populer-card img:hover {
   transform: scale(1.4);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -261,18 +193,22 @@
 }
 
 /* Membalik posisi kiri/kanan */
-.profile-card.left .text {
+.populer-card.left .text {
   order: 1;
 }
-.profile-card.left img {
+.populer-card.left img {
   order: 2;
 }
-.profile-card.right img {
+.populer-card.right img {
   order: 1;
 }
-.profile-card.right .text {
+.populer-card.right .text {
   order: 2;
 }
-.profile-card .text {
+.populer-card .text {
   flex: 1;
 }
+.populer-card .text h2 {
+  margin-bottom: 10px;
+}
+

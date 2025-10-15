@@ -21,7 +21,6 @@
 .populer-c {
   display: flex;
   gap: 20px;
-  transition: transform 0.5s ease;
 }
 
 /* Tiap card */
@@ -108,9 +107,9 @@
 .testimonials { padding: 40px 0; }
 .buble-respon { max-width: 1100px; margin: 0 auto; }
 .testi-c { display: flex; gap: 28px; align-items: stretch; justify-content: space-between; }
-.testi-slide { background: #00eeff; color: #fff; border-radius: 18px; padding: 18px; box-sizing: border-box; flex: 1 1 30%; min-width: 260px; position: relative; }
+.testi-slide { background:linear-gradient(#0000007e, #ff6200); color: #ffffff87; border-radius: 18px; padding: 18px; box-sizing: border-box; flex: 1 1 30%; min-width: 260px; position: relative; }
 .testi-slide h3 { margin-top: 14px; font-size: 0.95rem; color: #002f76; font-weight:700; }
-.testi-slide p { color: #000000; opacity: 0.95; line-height: 1.4; }
+.testi-slide p { color: #ffffff; opacity: 0.95; line-height: 1.4; }
 
 
 .testi-slide::before { content: ""; display: block; width: calc(100% - 40px); height: 110px; background: linear-gradient(180deg, #fff 0%, #f4f4f4 100%); border-radius: 8px; margin: 10px 20px; }
@@ -235,12 +234,16 @@ button:hover{
     }
 
     .cr {
+      margin-top: 10px;
       position:absolute;
-      top:530%;
+      top:482%;
       padding: 10px;
       font-family: 'Courier New', Courier, monospace;
       font-size: 15px;
       font-style: italic;
+    }
+    .cr:hover{
+      color: white;
     }
 
     .footer-col {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nusantara Travel</title>
+    <title>Nusantara Travel | Jelajahi Keindahan Alam dan Budaya Indonesia</title>
     <link rel="stylesheet" href="css/ss.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -28,7 +28,7 @@
 
         body {
             margin: 0;
-            background-color: rgba(0, 149, 255, 0.594);
+            background:linear-gradient(#000000, #ff9900, #ff0000, #ff4d00, #ff9900, #000000);
             /* no extra top padding — navbar will be in flow and stick to top */
             padding-top: 0;
         }
@@ -214,7 +214,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <a href="destination.html">Destination</a>
-                <a href="#">About Us</a>
+                <a href="contact.html">About Us</a>
                 <a href="contact.html">Contact Us</a>
             </nav>
         </div>
@@ -259,181 +259,210 @@
         </div>
     </div>
 
-  <!-- ===== Banner Slider Fix (Push Effect) ===== -->
+    <!-- ===== Banner Slider Fix (Push Effect) ===== -->
 <div class="cont-slide">
-  <div class="slide active">
-    <img src="asset/img/Banner/banner 1.png" alt="Banner 1">
-    <div class="content">
-      <h3>Selamat Datang di Nusantara Travel</h3>
-      <p>Jelajahi keindahan alam Indonesia bersama kami!</p>
-    </div>
-  </div>
-
-  <div class="slide">
-    <img src="asset/img/Banner/banner 2.png" alt="Banner 2">
-    <div class="content">
-      <h3>Destinasi Eksotis</h3>
-      <p>Dari Raja Ampat hingga Bromo, semua menunggu untuk dijelajahi.</p>
-    </div>
-  </div>
-
-  <div class="slide">
-    <img src="asset/img/Banner/banner.png" alt="Banner 3">
-    <div class="content">
-      <h3>Petualangan Tak Terlupakan</h3>   
-      <p>Rasakan pengalaman perjalanan yang berbeda bersama kami.</p>
-    </div>
-  </div>
-
-  <!-- Tombol navigasi -->
-  <button class="turn prev">&#10094;</button>
-  <button class="turn next">&#10095;</button>
-
-  <!-- Titik indikator -->
-  <div class="dot-container">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</div>
-
-
-    <!-- Category -->
-    <section class="container mt-5 pt-4">
-       <h2 class="title">[ Kategori ]</h2>
-        <div class="row gx-4 gy-4 align-items-stretch" id="card-c">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card photo-card h-100 shadow-sm">
-                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-1.jpg');"></div>
-                    <div class="card-body d-flex align-items-end p-0">
-                        <div class="card-overlay p-3 w-100">
-                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Sejarah dan Budaya</h5>
-                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[History and Culture]</h5>
-                            <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card photo-card h-100 shadow-sm">
-                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-2.jpg');"></div>
-                    <div class="card-body d-flex align-items-end p-0">
-                        <div class="card-overlay p-3 w-100">
-                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Alam</h5>
-                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[Nature]</h5>
-                            <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card photo-card h-100 shadow-sm">
-                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto.jpg'); "></div>
-                    <div class="card-body d-flex align-items-end p-0">
-                        <div class="card-overlay p-3 w-100">
-                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Khusus</h5>
-                            <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[Special Interest]</h5>
-                            <p class="card-text small">Body text for whatever you'd like to add more to the subheading.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- POPULER SECTION -->
-<h2 class="title">[ Populer ]</h2>
-<div class="populer-package">
-  <button class="n-prev">&#10094;</button>
-
-  <div class="populer-c">
-    <div class="populer-slide">
-      <img class="image" src="asset/img/foto.jpg" alt="#">
-      <div class="caption">
-        <h3>SELAMAT DATANG DI SLIDER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-
-    <div class="populer-slide">
-      <img class="image" src="asset/img/sejarah dan budaya/papua.jpg" alt="#">
-      <div class="caption">
-        <h3>SELAMAT DATANG DI SLIDER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-
-    <div class="populer-slide">
-      <img class="image" src="asset/img/kota/palembangg.jpg" alt="#">
-      <div class="caption">
-        <h3>SELAMAT DATANG DI SLIDER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-
-    <div class="populer-slide">
-      <img class="image" src="asset/img/alam/bali.jpg" alt="#">
-      <div class="caption">
-        <h3>SELAMAT DATANG DI SLIDER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-
-    <div class="populer-slide">
-      <img class="image" src="asset/img/kota/tugu yogya.jpg" alt="#">
-      <div class="caption">
-        <h3>SELAMAT DATANG DI SLIDER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-
-    <div class="populer-slide">
-      <img class="image" src="asset/img/kota/bandung.jpg" alt="#">
-      <div class="caption">
-        <h3>SELAMAT DATANG DI SLIDER</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </div>
-    </div>
-  </div>
-
-  <button class="n-next">&#10095;</button>
-</div>
-
-
-    <div class="testimonials">
-        <div class="buble-respon">
-            <h2 class="title">[ Testimoni ]</h2>
-            <div class="testi-c">
-                <div class="testi-slide">
-                    <p>"Nusantara Travel membuat perjalanan saya ke Bali menjadi sangat mudah dan menyenangkan! Paket
-                        wisata yang mereka tawarkan sangat lengkap dan terjangkau. Saya sangat merekomendasikan layanan
-                        mereka kepada siapa saja yang ingin menjelajahi keindahan Indonesia."</p>
-                    <h3>- Andi, Jakarta</h3>
-                </div>
-                <div class="testi-slide">
-                    <p>"Saya sangat puas dengan layanan Nusantara Travel. Mereka membantu saya merencanakan liburan
-                        keluarga ke Yogyakarta dengan sangat baik. Semua akomodasi dan transportasi diatur dengan rapi,
-                        sehingga kami bisa fokus menikmati waktu bersama."</p>
-                    <h3>- Siti, Surabaya</h3>
-                </div>
-                <div class="testi-slide">
-                    <p>"Nusantara Travel benar-benar memahami kebutuhan pelancong. Saya memesan paket wisata ke Lombok
-                        melalui mereka, dan semuanya berjalan lancar. Panduan wisata mereka sangat berpengetahuan dan
-                        ramah. Saya pasti akan menggunakan jasa mereka lagi di masa depan!"</p>
-                    <h3>- Budi, Bandung</h3>
-                </div>
-            </div>
-           
-            <div class="dot-cont-testi"> </div>
+    <div class="slide active">
+        <img src="asset/img/Banner/banner 1.png" alt="Banner 1">
+        <div class="content">
+            <h3>Selamat Datang di Nusantara Travel</h3>
+            <p>Jelajahi keindahan alam Indonesia bersama kami! Dari ujung barat hingga timur, setiap sudut Nusantara menyimpan keajaiban yang menunggu untuk kamu temukan.</p>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-container">
+    <div class="slide">
+        <img src="asset/img/Banner/banner 2.png" alt="Banner 2">
+        <div class="content">
+            <h3>Destinasi Eksotis</h3>
+            <p>Dari Raja Ampat dengan lautnya yang jernih hingga Bromo dengan sunrise legendarisnya, Nusantara Travel siap membawa kamu ke pengalaman luar biasa di setiap perjalanan.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="asset/img/Banner/banner.png" alt="Banner 3">
+        <div class="content">
+            <h3>Petualangan Tak Terlupakan</h3>
+            <p>Temukan sensasi petualangan sejati! Menyelam di Labuan Bajo, mendaki Bromo, atau menikmati budaya Bali — setiap langkah penuh cerita dan keindahan.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="asset/img/Nusantara Travel.jpg" alt="Banner 4">
+        <div class="content">
+            <h3>Keindahan Budaya dan Alam Indonesia</h3>
+            <p>Dari tarian tradisional Bali hingga panorama hijau Toba, setiap tempat menawarkan harmoni budaya dan alam yang memikat hati para pelancong.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="asset/img/Banner/banner voucher.png" alt="Banner 5">
+        <div class="content">
+            <h3>Promo Spesial untuk Petualang Nusantara</h3>
+            <p>Nikmati berbagai penawaran menarik untuk perjalanan impianmu! Wujudkan liburan tak terlupakan dengan harga terbaik bersama Nusantara Travel.</p>
+        </div>
+    </div>
+    
+    <!-- Tombol navigasi -->
+    <button class="turn prev">&#10094;</button>
+    <button class="turn next">&#10095;</button>
+    
+    <!-- Titik indikator -->
+    <div class="dot-container">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+</div>
+
+    <!-- Category -->
+<section class="container mt-5 pt-4">
+    <h2 class="title">Kategori Wisata</h2>
+    <div class="row gx-4 gy-4 align-items-stretch" id="card-c">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card photo-card h-100 shadow-sm">
+                <a href="kategori.html">
+                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-1.jpg');"></div>
+                </a>
+                <div class="card-body d-flex align-items-end p-0">
+                    <div class="card-overlay p-3 w-100">
+                        <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Sejarah dan Budaya</h5>
+                        <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[History and Culture]</h5>
+                        <p class="card-text small">
+                            Jelajahi kekayaan sejarah dan budaya Indonesia melalui destinasi bersejarah seperti Candi Borobudur dan Keraton Yogyakarta. 
+                            Rasakan keagungan masa lalu yang berpadu dengan keramahan lokal dan tradisi yang masih hidup hingga kini.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+    <div class="card photo-card h-100 shadow-sm">
+        <a href="kategori.html">
+            <div class="card-img-top img-cover" style="background-image:url('asset/img/foto-2.jpg');"></div>
+        </a>
+        <div class="card-body d-flex align-items-end p-0">
+            <div class="card-overlay p-3 w-100">
+                <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Alam</h5>
+                <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[Nature]</h5>
+                <p class="card-text small">
+                    Nikmati pesona alam Indonesia yang menakjubkan. 
+                    Dari keindahan sunrise di Gunung Bromo, udara segar di pegunungan Dieng, 
+                    hingga kejernihan air Danau Toba dan pesona laut Bunaken. 
+                    Setiap destinasi menawarkan ketenangan dan keindahan yang memanjakan mata.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card photo-card h-100 shadow-sm">
+                <a href="kategori.html">
+                    <div class="card-img-top img-cover" style="background-image:url('asset/img/foto.jpg');"></div>
+                </a>
+                <div class="card-body d-flex align-items-end p-0">
+                    <div class="card-overlay p-3 w-100">
+                        <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">Khusus</h5>
+                        <h5 class="card-title mb-1" style="color: rgb(4, 0, 88);">[Special Interest]</h5>
+                        <p class="card-text small">
+                            Bagi kamu pencinta petualangan dan pengalaman unik, kategori ini menghadirkan aktivitas spesial seperti diving di Raja Ampat,
+                            mendaki gunung Rinjani, hingga menjelajahi gua tersembunyi di Sulawesi. 
+                            Wujudkan hasrat eksplorasimu bersama Nusantara Travel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- POPULER SECTION -->
+<h2 class="title">Destinasi Populer</h2>
+<div class="populer-package">
+    <button class="n-prev">&#10094;</button>
+
+    <div class="populer-c">
+        <div class="populer-slide">
+            <img class="image" src="asset/img/foto.jpg" alt="Candi Borobudur">
+            <div class="caption">
+                <h3>Candi Borobudur, Magelang</h3>
+                <p>Rasakan ketenangan spiritual di Candi Borobudur, warisan dunia UNESCO yang memukau. Pemandangan sunrise dari puncaknya membawa suasana damai yang tak terlupakan.</p>
+            </div>
+        </div>
+
+        <div class="populer-slide">
+            <img class="image" src="asset/img/sejarah dan budaya/papua.jpg" alt="Papua">
+            <div class="caption">
+                <h3>Keajaiban Papua</h3>
+                <p>Menjelajahi Papua bagaikan memasuki dunia yang masih perawan. Dari lembah Baliem hingga laut biru Raja Ampat, keindahan alam dan budayanya sungguh tiada duanya.</p>
+            </div>
+        </div>
+
+        <div class="populer-slide">
+            <img class="image" src="asset/img/kota/palembangg.jpg" alt="Palembang">
+            <div class="caption">
+                <h3>Palembang, Kota Sejarah</h3>
+                <p>Nikmati pesona Sungai Musi dan kemegahan Jembatan Ampera di Palembang. Jangan lupa mencicipi pempek khas kota ini yang terkenal hingga ke seluruh Nusantara.</p>
+            </div>
+        </div>
+
+        <div class="populer-slide">
+            <img class="image" src="asset/img/alam/bali.jpg" alt="Bali">
+            <div class="caption">
+                <h3>Bali, Pulau Dewata</h3>
+                <p>Pulau seribu pura ini selalu memikat hati. Dari pantai Kuta hingga Ubud yang tenang, Bali menghadirkan harmoni sempurna antara budaya, alam, dan spiritualitas.</p>
+            </div>
+        </div>
+
+        <div class="populer-slide">
+            <img class="image" src="asset/img/kota/tugu yogya.jpg" alt="Yogyakarta">
+            <div class="caption">
+                <h3>Yogyakarta, Jiwa Jawa</h3>
+                <p>Jelajahi kota penuh makna budaya dan tradisi. Dari Keraton, Malioboro, hingga kuliner gudeg yang legendaris — Yogyakarta selalu menyambutmu dengan kehangatan.</p>
+            </div>
+        </div>
+
+        <div class="populer-slide">
+            <img class="image" src="asset/img/kota/bandung.jpg" alt="Bandung">
+            <div class="caption">
+                <h3>Bandung, Kota Kembang</h3>
+                <p>Udara sejuk dan keindahan alam Lembang hingga Ciwidey menjadikan Bandung destinasi favorit untuk berlibur. Nikmati juga pesona kulinernya yang tak ada habisnya.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="n-next">&#10095;</button>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+    <div class="buble-respon">
+        <h2 class="title">Testimoni Wisatawan</h2>
+        <div class="testi-c">
+            <div class="testi-slide">
+                <p>"Perjalanan saya ke Bali bersama Nusantara Travel sungguh luar biasa! Semua jadwal diatur rapi, guide-nya ramah, dan hotelnya nyaman. Liburan ini benar-benar menyegarkan jiwa."</p>
+                <h3>- Andi, Jakarta</h3>
+            </div>
+            <div class="testi-slide">
+                <p>"Nusantara Travel membantu saya dan keluarga menjelajahi keindahan Yogyakarta tanpa repot. Dari Borobudur hingga Keraton, semuanya berjalan lancar dan menyenangkan."</p>
+                <h3>- Siti, Surabaya</h3>
+            </div>
+            <div class="testi-slide">
+                <p>"Saya memesan paket ke Lombok dan semuanya melebihi ekspektasi! Mulai dari transportasi, hotel, hingga aktivitas snorkeling di Gili Trawangan, semua sempurna. Terima kasih Nusantara Travel!"</p>
+                <h3>- Budi, Bandung</h3>
+            </div>
+        </div>
+
+        <div class="dot-cont-testi"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+
             <!-- About -->
             <div class="footer-col">
                 <h3>About</h3>
@@ -478,55 +507,55 @@
 
     <script>
         // ==== Populer ===
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".populer-c");
-  const slides = document.querySelectorAll(".populer-slide");
-  const nextBtn = document.querySelector(".n-next");
-  const prevBtn = document.querySelector(".n-prev");
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector(".populer-c");
+            const slides = document.querySelectorAll(".populer-slide");
+            const nextBtn = document.querySelector(".n-next");
+            const prevBtn = document.querySelector(".n-prev");
 
-  let cardWidth = slides[0].offsetWidth + 22;
-  let isMoving = false;
+            let cardWidth = slides[0].offsetWidth + 22;
+            let isMoving = false;
 
-  // ==== Fungsi untuk geser ke kanan ====
-  function nextSlide() {
-    if (isMoving) return;
-    isMoving = true;
+            // ==== Fungsi untuk geser ke kanan ====
+            function nextSlide() {
+                if (isMoving) return;
+                isMoving = true;
 
-    container.style.transition = "transform 0.9s ease";
-    container.style.transform = `translateX(-${cardWidth}px)`;
+                container.style.transition = "transform 0.9s ease";
+                container.style.transform = `translateX(-${cardWidth}px)`;
 
-    setTimeout(() => {
-      container.appendChild(container.firstElementChild);
-      container.style.transition = "none";
-      container.style.transform = "translateX(0)";
-      isMoving = false;
-    }, 500);
-  }
+                setTimeout(() => {
+                    container.appendChild(container.firstElementChild);
+                    container.style.transition = "none";
+                    container.style.transform = "translateX(0)";
+                    isMoving = false;
+                }, 500);
+            }
 
-  // ==== Fungsi untuk geser ke kiri ====
-  function prevSlide() {
-    if (isMoving) return;
-    isMoving = true;
+            // ==== Fungsi untuk geser ke kiri ====
+            function prevSlide() {
+                if (isMoving) return;
+                isMoving = true;
 
-    container.insertBefore(container.lastElementChild, container.firstElementChild);
+                container.insertBefore(container.lastElementChild, container.firstElementChild);
 
-    container.style.transition = "none";
-    container.style.transform = `translateX(-${cardWidth}px)`;
+                container.style.transition = "none";
+                container.style.transform = `translateX(-${cardWidth}px)`;
 
-    setTimeout(() => {
-      container.style.transition = "transform 0.9s ease";
-      container.style.transform = "translateX(0)";
-    }, 20);
+                setTimeout(() => {
+                    container.style.transition = "transform 0.9s ease";
+                    container.style.transform = "translateX(0)";
+                }, 20);
 
-    setTimeout(() => {
-      isMoving = false;
-    }, 520);
-  }
+                setTimeout(() => {
+                    isMoving = false;
+                }, 520);
+            }
 
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
-});
-</script>
+            nextBtn.addEventListener("click", nextSlide);
+            prevBtn.addEventListener("click", prevSlide);
+        });
+    </script>
 
 </body>
 
