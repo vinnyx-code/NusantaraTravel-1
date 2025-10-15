@@ -5,6 +5,10 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
+        body{
+          background: linear-gradient(#000000, #ff9900, #ff0000, #ff4d00, #ff9900, #000000);
+        }
+
         .cont-nav {
             display: flex;
             gap: 100px;

@@ -132,6 +132,11 @@
             fill: rgb(2, 113, 249);
         }
 /* Card untuk icon */
+
+        .social-icon {
+            display: flex; /* ikon sejajar ke samping */
+            gap: 20px; /* jarak antar ikon */
+        }
         .card {
             display: flex;
             gap: 20px;
