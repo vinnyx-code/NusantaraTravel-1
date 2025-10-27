@@ -272,7 +272,7 @@
 .profile-card.left img {
   order: 2;
 }
-.profile-card.right img {
+.profile-card.right a img {
   order: 1;
 }
 .profile-card.right .text {
